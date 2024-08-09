@@ -18,5 +18,6 @@ func main() {
 	PORT := os.Getenv("PORT")
 
 	app.GET("/", handlers.Index)
+	app.Static("/assets", "public")
 	app.Logger.Fatal(app.Start(PORT))
 }
