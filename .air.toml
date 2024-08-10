@@ -3,7 +3,7 @@ tmp_dir = "tmp"
 
 [build]
   bin = "./tmp/main"
-  cmd = "yarn build && go build -tags dev -o ./tmp/main ./src/main.go"
+  cmd = "yarn build && templ generate --notify-proxy && go build -tags dev -o ./tmp/main ./src/main.go"
 
   delay = 20
   exclude_dir = ["assets", "tmp", "vendor", "node_modules"]
