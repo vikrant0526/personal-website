@@ -1,0 +1,24 @@
+package components
+
+templ Navigation() {
+	<div class="fixed top-0 inset-x-0 z-50">
+		<nav class="container m-auto text-white p-5 flex justify-between items-center">
+			<a href="/" class="relative">
+				<span class="text-4xl font-semibold text-nowrap absolute -top-0.5 -left-0.5 z-10 hover:translate-x-0.5 hover:translate-y-0.5 duration-200 ease-in-out">Vikrant Shah</span>
+				<span class="text-4xl font-semibold text-nowrap text-cyan-500">Vikrant Shah</span>
+			</a>
+			<div class="flex">
+				@navItem("/", "Home")
+				@navItem("/about", "About")
+				@navItem("/contact", "Contact")
+			</div>
+		</nav>
+	</div>
+}
+
+templ navItem(href string, text string) {
+	<a href={ templ.URL(href) } class="text-xl mx-2 relative font-medium">
+		<span class="absolute top-0 left-0 hover:-top-0.5 hover:-left-0.5 z-10 transition-color duration-200 ease-in-out">{ text }</span>
+		<span class="bg-gradient-to-r from-cyan-400 via-sky-500 to-sky-700 inline-block text-transparent bg-clip-text">{ text }</span>
+	</a>
+}

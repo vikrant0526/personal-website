@@ -18,7 +18,12 @@ func main() {
 	PORT := os.Getenv("PORT")
 
 	app.RouteNotFound("/*", handlers.Route404)
+
 	app.GET("/", handlers.Index)
+	app.GET("/about", handlers.About)
+	app.GET("/contact", handlers.Contact)
+
 	app.Static("/assets", "assets")
+
 	app.Logger.Fatal(app.Start(PORT))
 }

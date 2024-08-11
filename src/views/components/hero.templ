@@ -1,20 +1,8 @@
 package components
 
-templ Hero(subtitle string) {
-	<section class="h-screen w-screen relative">
+templ Hero() {
+	<section class="h-screen w-screen relative overflow-clip">
 		<div class="w-full aspect-square bg-cyan-500 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
-		<div class="container p-4 flex m-auto h-screen items-center">
-			<div class="flex flex-1 items-center">
-				<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-48 aspect-square"/>
-				<div>
-					<h1 class="text-9xl">Vikrant Shah</h1>
-					<p class="text-4xl text-cyan-500 text-right">{ subtitle }</p>
-				</div>
-			</div>
-			<div class="w-1/4 relative">
-				<img src="/assets/images/vikrant-shah-profile.jpg" alt="Vikrant Shah"/>
-				<div class="w-full h-full border-4 border-cyan-500 absolute top-4 left-4 -z-10"></div>
-			</div>
-		</div>
+		<div class="container p-4 flex m-auto h-screen items-center justify-between"></div>
 	</section>
 }
