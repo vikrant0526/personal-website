@@ -3,7 +3,6 @@ run: build
 
 build: 
 	@templ generate
-	@yarn build
 	@go build -o bin/app src/main.go
 
 templ:

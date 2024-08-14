@@ -1,12 +1,169 @@
 package views
 
-import "github.com/vikrant0526/personal-website/src/views/layouts"
+import (
+	"github.com/vikrant0526/personal-website/src/views/components"
+	"github.com/vikrant0526/personal-website/src/views/layouts"
+)
+
+var frontendSkills []components.SkillItem = []components.SkillItem{
+	{Name: "ReactJS", Src: "/assets/svgs/react.svg"},
+	{Name: "Angular", Src: "/assets/svgs/angular.svg"},
+	{Name: "React Native", Src: "/assets/svgs/react.svg"},
+	{Name: "Vue", Src: "/assets/svgs/vue.svg"},
+	{Name: "NextJS", Src: "/assets/svgs/nextjs.svg"},
+	{Name: "TanStack", Src: "/assets/svgs/react-query.svg"},
+	{Name: "Redux", Src: "/assets/svgs/redux.svg"},
+	{Name: "RxJS", Src: "/assets/svgs/rxjs.svg"},
+	{Name: "TailwindCSS", Src: "/assets/svgs/tailwindcss.svg"},
+	{Name: "Bootstrap", Src: "/assets/svgs/bootstrap.svg"},
+	{Name: "HTML", Src: "/assets/svgs/html.svg"},
+	{Name: "CSS", Src: "/assets/svgs/css.svg"},
+}
+
+var backendSkills []components.SkillItem = []components.SkillItem{
+	{Name: "NodeJS", Src: "/assets/svgs/nodejs.svg"},
+	{Name: "NestJS", Src: "/assets/svgs/nestjs.svg"},
+	{Name: "Express", Src: "/assets/svgs/express.svg"},
+	{Name: "Symfony", Src: "/assets/svgs/symfony.svg"},
+	{Name: "Echo", Src: "/assets/svgs/echo.svg"},
+	{Name: "Templ", Src: "/assets/svgs/templ.svg"},
+	{Name: "Prisma", Src: "/assets/svgs/prisma.svg"},
+}
+
+var programmingLanguages []components.SkillItem = []components.SkillItem{
+	{Name: "Typescript", Src: "/assets/svgs/typescript.svg"},
+	{Name: "Javascript", Src: "/assets/svgs/javascript.svg"},
+	{Name: "PHP", Src: "/assets/svgs/php.svg"},
+	{Name: "Go", Src: "/assets/svgs/golang.svg"},
+	{Name: "SQL", Src: "/assets/svgs/SQL.svg"},
+	{Name: "Java", Src: "/assets/svgs/java.svg"},
+}
+
+var databases []components.SkillItem = []components.SkillItem{
+	{Name: "MySQL", Src: "/assets/svgs/mysql.svg"},
+	{Name: "SQLite", Src: "/assets/svgs/sqlite.svg"},
+	{Name: "MongoDB", Src: "/assets/svgs/mongodb.svg"},
+}
+
+var otherTools []components.SkillItem = []components.SkillItem{
+	{Name: "Git", Src: "/assets/svgs/git.svg"},
+	{Name: "Docker", Src: "/assets/svgs/docker.svg"},
+	{Name: "Wordpress", Src: "/assets/svgs/wordpress.svg"},
+	{Name: "Linux", Src: "/assets/svgs/linux.svg"},
+	{Name: "RESTful APIs", Src: "/assets/svgs/api.svg"},
+	{Name: "GraphQL", Src: "/assets/svgs/graphql.svg"},
+	{Name: "VS Code", Src: "/assets/svgs/vscode.svg"},
+	{Name: "NeoVim", Src: "/assets/svgs/neovim.svg"},
+}
 
 templ About() {
 	@layouts.Base("About") {
-		<img src="/assets/images/vikrant-shah-profile.jpg" alt="Vikrant Shah" class="hover:translate-x-4 hover:translate-y-4 transition-transform duration-200 ease-in-out"/>
-		<div class="w-full h-full absolute top-4 left-4 -z-10 bg-gradient-to-tr from-cyan-400 via-sky-500 to-sky-700 p-1">
-			<div class="w-full h-full bg-primary"></div>
-		</div>
+		<section class="relative w-screen">
+			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
+			<div class="container flex items-center justify-between h-screen p-4 m-auto">
+				<div class="flex flex-col justify-center">
+					<div class="flex items-center">
+						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-36 xl:w-40 aspect-square"/>
+						<div>
+							@components.H1("My Journey")
+							@components.SubTitle("One Step At A Time.")
+						</div>
+					</div>
+					<p class="py-8 text-base">I'm a Full Stack Developer with a passion for building web applications. I specialize in building scalable and performant web applications using modern technologies.</p>
+					<div class="flex justify-between">
+						<div class="flex gap-5">
+							@components.ButtonLink("#skills", "Skills", false)
+							@components.ButtonLink("#experience", "Experience", false)
+							@components.ButtonLink("#education", "Education", false)
+						</div>
+					</div>
+				</div>
+				<div class="w-2/5">
+					<div class="bg-gradient-to-tr from-cyan-400 via-sky-500 to-sky-700">
+						<img src="/assets/images/vikrant-shah-profile-sq.jpg" alt="Vikrant Shah" class="w-full duration-200 ease-in-out -translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0"/>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="relative w-screen" id="skills">
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
+			<div class="container flex flex-col p-4 m-auto pt-28">
+				@components.H2("Skills")
+				<div class="py-8">
+					<div class="py-3">
+						@components.H3("Frontend")
+					</div>
+					<div class="flex flex-wrap pt-2 -mx-2">
+						for _, item := range frontendSkills {
+							@components.Skill(item)
+						}
+					</div>
+					<div class="py-3 pt-14">
+						@components.H3("Backend")
+					</div>
+					<div class="flex flex-wrap pt-2 -mx-2">
+						for _, item := range backendSkills {
+							@components.Skill(item)
+						}
+					</div>
+					<div class="py-3 pt-14">
+						@components.H3("Programming Languages")
+					</div>
+					<div class="flex flex-wrap pt-2 -mx-2">
+						for _, item := range programmingLanguages {
+							@components.Skill(item)
+						}
+					</div>
+					<div class="py-3 pt-14">
+						@components.H3("Databases")
+					</div>
+					<div class="flex flex-wrap pt-2 -mx-2">
+						for _, item := range databases {
+							@components.Skill(item)
+						}
+					</div>
+					<div class="py-3 pt-14">
+						@components.H3("Other Tools")
+					</div>
+					<div class="flex flex-wrap pt-2 -mx-2">
+						for _, item := range otherTools {
+							@components.Skill(item)
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="relative w-screen" id="experience">
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
+			<div class="container flex flex-col p-4 m-auto pt-28">
+				@components.H2("Experience")
+				<div class="py-8 flex flex-wrap">
+					@components.Experience()
+				</div>
+			</div>
+		</section>
+		<section class="relative w-screen" id="education">
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
+			<div class="container flex flex-col p-4 m-auto pt-28">
+				@components.H2("Education")
+				<div class="py-8 flex flex-wrap">
+					<div class="w-1/2">
+						<div class="py-3">
+							@components.H3("M.Sc. High Integrity Systems")
+						</div>
+						<div class="flex flex-wrap pt-2 -mx-2"></div>
+					</div>
+					<div class="w-1/2">
+						<div class="py-3">
+							@components.H3("B.Sc. Information Technology")
+						</div>
+						<div class="flex flex-wrap pt-2 -mx-2"></div>
+					</div>
+				</div>
+			</div>
+		</section>
 	}
 }
