@@ -1,34 +1,32 @@
-FROM node:21-alpine3.19 AS assetbuilder
-
-WORKDIR /app-assets
-
-COPY yarn.lock package.json ./
-RUN yarn install
-
-COPY . .
-
 FROM golang AS builder
 
 WORKDIR /app
-COPY --from=assetbuilder /app-assets ./
 
 RUN go install github.com/a-h/templ/cmd/templ@latest
 
 COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
+COPY . .
 RUN make build
 
-# EXPOSE 3000
-# CMD ["./bin/app"]
+FROM node:21-alpine3.19 AS asset
+
+WORKDIR /app
+
+COPY --from=builder /app/yarn.lock /app/package.json ./
+RUN yarn install
+
+COPY --from=builder /app/ .
+RUN yarn build
 
 FROM ubuntu
 
-WORKDIR /app-runner
+WORKDIR /app
 
-COPY --from=builder /app/bin/app ./
-COPY --from=builder /app/assets ./assets
-COPY --from=builder /app/.env ./
+COPY --from=asset /app/bin/app ./
+COPY --from=asset /app/assets ./assets
+COPY --from=asset /app/.env ./
 
 EXPOSE 3000
 

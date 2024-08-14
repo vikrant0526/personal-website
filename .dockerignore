@@ -1,0 +1,6 @@
+assets
+bin
+node_modules
+tmp
+.DS_Store
+.air.toml
