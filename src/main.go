@@ -11,11 +11,14 @@ import (
 
 func main() {
 	app := echo.New()
-	if err := godotenv.Load(); err != nil {
-		app.Logger.Fatal(err)
-	}
+	var PORT string
 
-	PORT := os.Getenv("PORT")
+	if err := godotenv.Load(); err != nil {
+		PORT = "3000"
+		// app.Logger.Fatal(err)
+	} else {
+		PORT = os.Getenv("PORT")
+	}
 
 	app.RouteNotFound("/*", handlers.Route404)
 
