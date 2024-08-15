@@ -26,7 +26,7 @@ WORKDIR /app
 
 COPY --from=asset /app/bin/app ./
 COPY --from=asset /app/assets ./assets
-COPY --from=asset /app/.env ./
+# COPY --from=asset /app/.env ./
 
 EXPOSE 3000
 
