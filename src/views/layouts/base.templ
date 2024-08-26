@@ -12,9 +12,12 @@ templ Base(title string) {
 			<title>{ title }</title>
 		</head>
 		<body>
-			<div class="absolute bg-cyan-500/50 h-16 w-16 blur-3xl rounded-full translate-x-[-50%] translate-y-[-50%] top-0 -z-50" id="cursor"></div>
+			<div id="bg-vingette" class="fixed inset-0 -z-50"></div>
+			<div class="absolute bg-cyan-500 h-20 w-20 blur-3xl rounded-full translate-x-[-50%] translate-y-[-50%] top-0 -z-40 transition-opacity duration-500" id="cursor"></div>
 			@components.Navigation()
-			{ children... }
+			<main>
+				{ children... }
+			</main>
 			@components.Footer()
 			<script src="/assets/script.js"></script>
 		</body>
