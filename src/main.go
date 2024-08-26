@@ -1,12 +1,14 @@
 package main
 
 import (
+	"net/http"
 	"os"
 
+	"github.com/a-h/templ"
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 
-	"github.com/vikrant0526/personal-website/src/handlers"
+	"github.com/vikrant0526/personal-website/src/views"
 )
 
 func main() {
@@ -15,18 +17,26 @@ func main() {
 
 	if err := godotenv.Load(); err != nil {
 		PORT = ":3000"
-		// app.Logger.Fatal(err)
 	} else {
 		PORT = os.Getenv("PORT")
 	}
 
-	app.RouteNotFound("/*", handlers.Route404)
+	app.RouteNotFound("/*", func(c echo.Context) error {
+		c.Response().Status = http.StatusNotFound
+		return views.Route404().Render(c.Request().Context(), c.Response().Writer)
+	})
 
-	app.GET("/", handlers.Index)
-	app.GET("/about", handlers.About)
-	app.GET("/contact", handlers.Contact)
+	BuildGetRoute(app, "/", views.Index())
+	BuildGetRoute(app, "/about", views.About())
+	BuildGetRoute(app, "/contact", views.Contact())
 
 	app.Static("/assets", "assets")
 
 	app.Logger.Fatal(app.Start(PORT))
+}
+
+func BuildGetRoute(e *echo.Echo, path string, t templ.Component) {
+	e.GET(path, func(c echo.Context) error {
+		return t.Render(c.Request().Context(), c.Response().Writer)
+	})
 }
