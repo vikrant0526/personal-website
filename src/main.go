@@ -14,7 +14,7 @@ func main() {
 	var PORT string
 
 	if err := godotenv.Load(); err != nil {
-		PORT = "3000"
+		PORT = ":3000"
 		// app.Logger.Fatal(err)
 	} else {
 		PORT = os.Getenv("PORT")
