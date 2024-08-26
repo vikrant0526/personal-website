@@ -1,0 +1,103 @@
+package components
+
+type SkillItem struct {
+	name string
+	src  string
+}
+
+type SkillGroup struct {
+	title  string
+	skills []SkillItem
+}
+
+templ Skill(skill SkillItem) {
+	<div class="w-1/5 px-2 mt-4">
+		<div class="flex items-center gap-4 px-6 py-3 backdrop-blur bg-white/5">
+			<div class="flex items-center justify-center bg-white rounded-full w-14 h-14">
+				<img src={ skill.src } alt={ skill.name } class="w-10 h-10"/>
+			</div>
+			<span class="text-xl font-semibold">{ skill.name }</span>
+		</div>
+	</div>
+}
+
+templ Skills() {
+	<div class="pb-8">
+		for _, group := range newSkills {
+			<div class="py-3 pt-14">
+				@H3(group.title)
+			</div>
+			<div class="flex flex-wrap pt-2 -mx-2">
+				for _, item := range group.skills {
+					<div class="w-1/5 px-2 mt-4">
+						<div class="flex items-center gap-4 px-6 py-3 backdrop-blur bg-white/5">
+							<div class="flex items-center justify-center bg-white rounded-full w-14 h-14">
+								<img src={ item.src } alt={ item.name } class="w-10 h-10"/>
+							</div>
+							<span class="text-xl font-semibold">{ item.name }</span>
+						</div>
+					</div>
+				}
+			</div>
+		}
+	</div>
+}
+
+var newSkills = []SkillGroup{
+	{title: "Frontend", skills: frontendSkills},
+	{title: "Backend", skills: backendSkills},
+	{title: "Languages", skills: programmingLanguages},
+	{title: "Databases", skills: databases},
+	{title: "Tools", skills: otherTools},
+}
+
+var frontendSkills = []SkillItem{
+	{name: "ReactJS", src: "/assets/svgs/react.svg"},
+	{name: "Angular", src: "/assets/svgs/angular.svg"},
+	{name: "React Native", src: "/assets/svgs/react.svg"},
+	{name: "Vue", src: "/assets/svgs/vue.svg"},
+	{name: "NextJS", src: "/assets/svgs/nextjs.svg"},
+	{name: "TanStack", src: "/assets/svgs/react-query.svg"},
+	{name: "Redux", src: "/assets/svgs/redux.svg"},
+	{name: "RxJS", src: "/assets/svgs/rxjs.svg"},
+	{name: "TailwindCSS", src: "/assets/svgs/tailwindcss.svg"},
+	{name: "Bootstrap", src: "/assets/svgs/bootstrap.svg"},
+	{name: "HTML", src: "/assets/svgs/html.svg"},
+	{name: "CSS", src: "/assets/svgs/css.svg"},
+}
+
+var backendSkills = []SkillItem{
+	{name: "NodeJS", src: "/assets/svgs/nodejs.svg"},
+	{name: "NestJS", src: "/assets/svgs/nestjs.svg"},
+	{name: "Express", src: "/assets/svgs/express.svg"},
+	{name: "Symfony", src: "/assets/svgs/symfony.svg"},
+	{name: "Echo", src: "/assets/svgs/echo.svg"},
+	{name: "Templ", src: "/assets/svgs/templ.svg"},
+	{name: "Prisma", src: "/assets/svgs/prisma.svg"},
+}
+
+var programmingLanguages = []SkillItem{
+	{name: "Typescript", src: "/assets/svgs/typescript.svg"},
+	{name: "Javascript", src: "/assets/svgs/javascript.svg"},
+	{name: "PHP", src: "/assets/svgs/php.svg"},
+	{name: "Go", src: "/assets/svgs/golang.svg"},
+	{name: "SQL", src: "/assets/svgs/SQL.svg"},
+	{name: "Java", src: "/assets/svgs/java.svg"},
+}
+
+var databases = []SkillItem{
+	{name: "MySQL", src: "/assets/svgs/mysql.svg"},
+	{name: "SQLite", src: "/assets/svgs/sqlite.svg"},
+	{name: "MongoDB", src: "/assets/svgs/mongodb.svg"},
+}
+
+var otherTools = []SkillItem{
+	{name: "Git", src: "/assets/svgs/git.svg"},
+	{name: "Docker", src: "/assets/svgs/docker.svg"},
+	{name: "Wordpress", src: "/assets/svgs/wordpress.svg"},
+	{name: "Linux", src: "/assets/svgs/linux.svg"},
+	{name: "RESTful APIs", src: "/assets/svgs/api.svg"},
+	{name: "GraphQL", src: "/assets/svgs/graphql.svg"},
+	{name: "VS Code", src: "/assets/svgs/vscode.svg"},
+	{name: "NeoVim", src: "/assets/svgs/neovim.svg"},
+}

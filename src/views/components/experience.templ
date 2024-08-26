@@ -1,0 +1,88 @@
+package components
+
+type ExperienceItem struct {
+	title       string
+	company     string
+	duration    string
+	description []string
+}
+
+var experiences []ExperienceItem = []ExperienceItem{
+	{
+		title:    "Platform Developer",
+		company:  "company A",
+		duration: "Jan 2021 - Present",
+		description: []string{
+			"Developed and maintained the platform.",
+			"Worked on the frontend and backend.",
+			"Implemented new features and fixed bugs.",
+		},
+	},
+	{
+		title:    "Full Stack Developer (Working Student)",
+		company:  "company B",
+		duration: "Jan 2020 - Dec 2020",
+		description: []string{
+			"Developed and maintained the platform.",
+			"Worked on the frontend and backend.",
+			"Implemented new features and fixed bugs.",
+		},
+	},
+	{
+		title:    "Software Engineering Team Lead",
+		company:  "company C",
+		duration: "Jan 2019 - Dec 2019",
+		description: []string{
+			"Developed and maintained the platform.",
+			"Worked on the frontend and backend.",
+			"Implemented new features and fixed bugs.",
+		},
+	},
+	{
+		title:    "Jr. Software Engineer",
+		company:  "company D",
+		duration: "Jan 2018 - Dec 2018",
+		description: []string{
+			"Developed and maintained the platform.",
+			"Worked on the frontend and backend.",
+			"Implemented new features and fixed bugs.",
+		},
+	},
+	{
+		title:    "Software Engineer (Intern)",
+		company:  "company E",
+		duration: "Jan 2017 - Dec 2017",
+		description: []string{
+			"Developed and maintained the platform.",
+			"Worked on the frontend and backend.",
+			"Implemented new features and fixed bugs.",
+		},
+	},
+}
+
+templ Experience() {
+	<div class="flex flex-wrap py-8">
+		for _, item := range experiences {
+			<div class="w-1/2">
+				<div class="px-2">
+					<div class="py-3">
+						@H3(item.title)
+					</div>
+					<div class="w-full px-6 py-3 mt-6 mb-12 backdrop-blur bg-white/5">
+						<div class="flex justify-between py-2">
+							<p class="text-2xl font-semibold">{ item.company }</p>
+							<p class="text-xl">{ item.duration }</p>
+						</div>
+						<div class="py-2">
+							<ul class="list-disc list-inside">
+								for _, item := range item.description {
+									<li>{ item }</li>
+								}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+}

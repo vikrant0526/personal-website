@@ -1,9 +1,38 @@
 package views
 
-import "github.com/vikrant0526/personal-website/src/views/layouts"
+import (
+	"github.com/vikrant0526/personal-website/src/views/components"
+	"github.com/vikrant0526/personal-website/src/views/layouts"
+)
 
 templ Contact() {
 	@layouts.Base("About") {
-		<div>Contact</div>
+		<section class="relative w-screen">
+			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
+			<div class="container flex items-center justify-between h-screen p-4 m-auto">
+				<div class="flex flex-col justify-center">
+					<div class="flex items-center">
+						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-36 xl:w-40 aspect-square"/>
+						<div>
+							@components.H1("My Journey")
+							@components.SubTitle("One Step At A Time.")
+						</div>
+					</div>
+					<p class="py-8 text-base">I'm a Full Stack Developer with a passion for building web applications. I specialize in building scalable and performant web applications using modern technologies.</p>
+					<div class="flex justify-between">
+						<div class="flex gap-5">
+							@components.ButtonLink("#skills", "Skills", false)
+							@components.ButtonLink("#experience", "Experience", false)
+							@components.ButtonLink("#education", "Education", false)
+						</div>
+					</div>
+				</div>
+				<div class="w-2/5">
+					<div class="bg-gradient-to-tr from-cyan-400 via-sky-500 to-sky-700">
+						<img src="/assets/images/vikrant-shah-profile-sq.jpg" alt="Vikrant Shah" class="w-full duration-200 ease-in-out -translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0"/>
+					</div>
+				</div>
+			</div>
+		</section>
 	}
 }

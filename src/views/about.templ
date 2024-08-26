@@ -5,57 +5,6 @@ import (
 	"github.com/vikrant0526/personal-website/src/views/layouts"
 )
 
-var frontendSkills []components.SkillItem = []components.SkillItem{
-	{Name: "ReactJS", Src: "/assets/svgs/react.svg"},
-	{Name: "Angular", Src: "/assets/svgs/angular.svg"},
-	{Name: "React Native", Src: "/assets/svgs/react.svg"},
-	{Name: "Vue", Src: "/assets/svgs/vue.svg"},
-	{Name: "NextJS", Src: "/assets/svgs/nextjs.svg"},
-	{Name: "TanStack", Src: "/assets/svgs/react-query.svg"},
-	{Name: "Redux", Src: "/assets/svgs/redux.svg"},
-	{Name: "RxJS", Src: "/assets/svgs/rxjs.svg"},
-	{Name: "TailwindCSS", Src: "/assets/svgs/tailwindcss.svg"},
-	{Name: "Bootstrap", Src: "/assets/svgs/bootstrap.svg"},
-	{Name: "HTML", Src: "/assets/svgs/html.svg"},
-	{Name: "CSS", Src: "/assets/svgs/css.svg"},
-}
-
-var backendSkills []components.SkillItem = []components.SkillItem{
-	{Name: "NodeJS", Src: "/assets/svgs/nodejs.svg"},
-	{Name: "NestJS", Src: "/assets/svgs/nestjs.svg"},
-	{Name: "Express", Src: "/assets/svgs/express.svg"},
-	{Name: "Symfony", Src: "/assets/svgs/symfony.svg"},
-	{Name: "Echo", Src: "/assets/svgs/echo.svg"},
-	{Name: "Templ", Src: "/assets/svgs/templ.svg"},
-	{Name: "Prisma", Src: "/assets/svgs/prisma.svg"},
-}
-
-var programmingLanguages []components.SkillItem = []components.SkillItem{
-	{Name: "Typescript", Src: "/assets/svgs/typescript.svg"},
-	{Name: "Javascript", Src: "/assets/svgs/javascript.svg"},
-	{Name: "PHP", Src: "/assets/svgs/php.svg"},
-	{Name: "Go", Src: "/assets/svgs/golang.svg"},
-	{Name: "SQL", Src: "/assets/svgs/SQL.svg"},
-	{Name: "Java", Src: "/assets/svgs/java.svg"},
-}
-
-var databases []components.SkillItem = []components.SkillItem{
-	{Name: "MySQL", Src: "/assets/svgs/mysql.svg"},
-	{Name: "SQLite", Src: "/assets/svgs/sqlite.svg"},
-	{Name: "MongoDB", Src: "/assets/svgs/mongodb.svg"},
-}
-
-var otherTools []components.SkillItem = []components.SkillItem{
-	{Name: "Git", Src: "/assets/svgs/git.svg"},
-	{Name: "Docker", Src: "/assets/svgs/docker.svg"},
-	{Name: "Wordpress", Src: "/assets/svgs/wordpress.svg"},
-	{Name: "Linux", Src: "/assets/svgs/linux.svg"},
-	{Name: "RESTful APIs", Src: "/assets/svgs/api.svg"},
-	{Name: "GraphQL", Src: "/assets/svgs/graphql.svg"},
-	{Name: "VS Code", Src: "/assets/svgs/vscode.svg"},
-	{Name: "NeoVim", Src: "/assets/svgs/neovim.svg"},
-}
-
 templ About() {
 	@layouts.Base("About") {
 		<section class="relative w-screen">
@@ -90,48 +39,7 @@ templ About() {
 			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
 			<div class="container flex flex-col p-4 m-auto pt-28">
 				@components.H2("Skills")
-				<div class="py-8">
-					<div class="py-3">
-						@components.H3("Frontend")
-					</div>
-					<div class="flex flex-wrap pt-2 -mx-2">
-						for _, item := range frontendSkills {
-							@components.Skill(item)
-						}
-					</div>
-					<div class="py-3 pt-14">
-						@components.H3("Backend")
-					</div>
-					<div class="flex flex-wrap pt-2 -mx-2">
-						for _, item := range backendSkills {
-							@components.Skill(item)
-						}
-					</div>
-					<div class="py-3 pt-14">
-						@components.H3("Programming Languages")
-					</div>
-					<div class="flex flex-wrap pt-2 -mx-2">
-						for _, item := range programmingLanguages {
-							@components.Skill(item)
-						}
-					</div>
-					<div class="py-3 pt-14">
-						@components.H3("Databases")
-					</div>
-					<div class="flex flex-wrap pt-2 -mx-2">
-						for _, item := range databases {
-							@components.Skill(item)
-						}
-					</div>
-					<div class="py-3 pt-14">
-						@components.H3("Other Tools")
-					</div>
-					<div class="flex flex-wrap pt-2 -mx-2">
-						for _, item := range otherTools {
-							@components.Skill(item)
-						}
-					</div>
-				</div>
+				@components.Skills()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="experience">
@@ -139,9 +47,7 @@ templ About() {
 			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
 			<div class="container flex flex-col p-4 m-auto pt-28">
 				@components.H2("Experience")
-				<div class="py-8 flex flex-wrap">
-					@components.Experience()
-				</div>
+				@components.Experience()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="education">
