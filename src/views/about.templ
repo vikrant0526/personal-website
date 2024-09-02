@@ -6,7 +6,7 @@ import (
 )
 
 templ About() {
-	@layouts.Base("About") {
+	@layouts.Base("Vikrant Shah | About") {
 		<section class="relative w-screen">
 			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
 			<div class="container flex items-center justify-between h-screen p-4 m-auto">
@@ -21,9 +21,9 @@ templ About() {
 					<p class="py-8 text-base">I'm a Full Stack Developer with a passion for building web applications. I specialize in building scalable and performant web applications using modern technologies.</p>
 					<div class="flex justify-between">
 						<div class="flex gap-5">
-							@components.ButtonLink("#skills", "Skills", false)
 							@components.ButtonLink("#experience", "Experience", false)
 							@components.ButtonLink("#education", "Education", false)
+							@components.ButtonLink("#skills", "Skills", false)
 						</div>
 					</div>
 				</div>
@@ -32,14 +32,6 @@ templ About() {
 						<img src="/assets/images/vikrant-shah-profile-sq.jpg" alt="Vikrant Shah" class="w-full duration-200 ease-in-out -translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0"/>
 					</div>
 				</div>
-			</div>
-		</section>
-		<section class="relative w-screen overflow-clip" id="skills">
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
-			<div class="container flex flex-col p-4 m-auto pt-28">
-				@components.H2("Skills")
-				@components.Skills()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="experience">
@@ -55,38 +47,15 @@ templ About() {
 			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
 			<div class="container flex flex-col p-4 m-auto pt-28">
 				@components.H2("Education")
-				<div class="pt-8 flex flex-wrap">
-					<div class="w-1/2">
-						<div class="px-2">
-							<div class="py-3">
-								@components.H3("B.Sc. Information Technology")
-							</div>
-							<div class="w-full backdrop-blur bg-white/5 p-4 mt-6">
-								<div class="py-2 flex justify-between">
-									<p class="text-2xl font-semibold">Uka Tarsadia University</p>
-									<p class="text-xl">April 2022 - Present</p>
-								</div>
-								<div class="py-2 text-xl font-semibold"></div>
-							</div>
-						</div>
-					</div>
-					<div class="w-1/2">
-						<div class="px-2">
-							<div class="py-3">
-								@components.H3("M.Sc. High Integrity Systems")
-							</div>
-							<div class="w-full backdrop-blur bg-white/5 p-4 mt-6">
-								<div class="py-2 flex justify-between">
-									<p class="text-xl font-semibold">Uka Tarsadia University</p>
-									<p class="text-xl font-semibold">May 2017 - Spet 2024</p>
-								</div>
-								<div class="py-2 text-xl font-semibold">
-									CGPA: 8.0
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				@components.Education()
+			</div>
+		</section>
+		<section class="relative w-screen overflow-clip" id="skills">
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
+			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
+			<div class="container flex flex-col p-4 m-auto pt-28">
+				@components.H2("Skills")
+				@components.Skills()
 			</div>
 		</section>
 	}

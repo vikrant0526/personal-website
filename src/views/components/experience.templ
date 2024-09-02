@@ -1,65 +1,5 @@
 package components
 
-type ExperienceItem struct {
-	title       string
-	company     string
-	duration    string
-	description []string
-}
-
-var experiences []ExperienceItem = []ExperienceItem{
-	{
-		title:    "Platform Developer",
-		company:  "company A",
-		duration: "Jan 2021 - Present",
-		description: []string{
-			"Developed and maintained the platform.",
-			"Worked on the frontend and backend.",
-			"Implemented new features and fixed bugs.",
-		},
-	},
-	{
-		title:    "Full Stack Developer (Working Student)",
-		company:  "company B",
-		duration: "Jan 2020 - Dec 2020",
-		description: []string{
-			"Developed and maintained the platform.",
-			"Worked on the frontend and backend.",
-			"Implemented new features and fixed bugs.",
-		},
-	},
-	{
-		title:    "Software Engineering Team Lead",
-		company:  "company C",
-		duration: "Jan 2019 - Dec 2019",
-		description: []string{
-			"Developed and maintained the platform.",
-			"Worked on the frontend and backend.",
-			"Implemented new features and fixed bugs.",
-		},
-	},
-	{
-		title:    "Jr. Software Engineer",
-		company:  "company D",
-		duration: "Jan 2018 - Dec 2018",
-		description: []string{
-			"Developed and maintained the platform.",
-			"Worked on the frontend and backend.",
-			"Implemented new features and fixed bugs.",
-		},
-	},
-	{
-		title:    "Software Engineer (Intern)",
-		company:  "company E",
-		duration: "Jan 2017 - Dec 2017",
-		description: []string{
-			"Developed and maintained the platform.",
-			"Worked on the frontend and backend.",
-			"Implemented new features and fixed bugs.",
-		},
-	},
-}
-
 templ Experience() {
 	<div class="flex flex-wrap py-8">
 		for _, item := range experiences {
@@ -85,4 +25,64 @@ templ Experience() {
 			</div>
 		}
 	</div>
+}
+
+type ExperienceItem struct {
+	title       string
+	company     string
+	duration    string
+	description []string
+}
+
+var experiences []ExperienceItem = []ExperienceItem{
+	{
+		title:    "Platform Developer",
+		company:  "Cogitanda DataProtect AG",
+		duration: "Mar 2024 - Aug 2024",
+		description: []string{
+			"Software Architecture & Software Development.",
+			"Software and System Design for web applications.",
+			"CSS & JS Library Development.",
+		},
+	},
+	{
+		title:    "Full Stack Developer (Working Student)",
+		company:  "SeDoMo GmbH (SeDoMo.io)",
+		duration: "Aug 2022 - Feb 2024",
+		description: []string{
+			"Feature & Digital User Experience Enhancement.",
+			"End-to-end Development delivery in Agile Environment.",
+			"Feature Proritization & Implementation Strategies design.",
+		},
+	},
+	{
+		title:    "Software Engineering Team Lead",
+		company:  "Good Old Geek IT-Services",
+		duration: "Nov 2020 - Mar 2022",
+		description: []string{
+			"Mentored Interns in React & React Native.",
+			"MERN Stack with NextJS & Cross-Platform Development.",
+			"Code Review, Code Quality & Deployment Strategies.",
+		},
+	},
+	{
+		title:    "Jr. Software Engineer",
+		company:  "Good Old Geek IT-Services",
+		duration: "Aug 2020 - Oct 2020",
+		description: []string{
+			"Developed and maintained the platform.",
+			"Worked on the frontend and backend.",
+			"Implemented new features and fixed bugs.",
+		},
+	},
+	{
+		title:    "Software Engineer (Intern)",
+		company:  "Good Old Geek IT-Services",
+		duration: "May 2020 - Jul 2020",
+		description: []string{
+			"Wordpress & WooCommerce Development.",
+			"Web & Social Media Assets Development with Adobe Suite.",
+			"PHP & MySQL Development for Web Applications.",
+		},
+	},
 }

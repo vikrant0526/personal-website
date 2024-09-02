@@ -22,6 +22,10 @@
     background-attachment: fixed;
   }
 
+  ::selection {
+    @apply bg-cyan-500 text-primary;
+  }
+
   #bg-vingette {
     background: rgb(255, 255, 255);
     background: radial-gradient(

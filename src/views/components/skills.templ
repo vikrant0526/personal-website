@@ -1,26 +1,5 @@
 package components
 
-type SkillItem struct {
-	name string
-	src  string
-}
-
-type SkillGroup struct {
-	title  string
-	skills []SkillItem
-}
-
-templ Skill(skill SkillItem) {
-	<div class="w-1/5 px-2 mt-4">
-		<div class="flex items-center gap-4 px-6 py-3 backdrop-blur bg-white/5">
-			<div class="flex items-center justify-center bg-white rounded-full w-14 h-14">
-				<img src={ skill.src } alt={ skill.name } class="w-10 h-10"/>
-			</div>
-			<span class="text-xl font-semibold">{ skill.name }</span>
-		</div>
-	</div>
-}
-
 templ Skills() {
 	<div class="pb-8">
 		for _, group := range newSkills {
@@ -41,6 +20,16 @@ templ Skills() {
 			</div>
 		}
 	</div>
+}
+
+type SkillItem struct {
+	name string
+	src  string
+}
+
+type SkillGroup struct {
+	title  string
+	skills []SkillItem
 }
 
 var newSkills = []SkillGroup{

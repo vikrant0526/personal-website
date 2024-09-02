@@ -1,0 +1,50 @@
+package components
+
+templ Education() {
+	<div class="pt-8 flex flex-wrap">
+		for _, item := range education {
+			<div class="w-1/2">
+				<div class="px-2">
+					<div class="py-3">
+						@H3(item.title)
+					</div>
+					<div class="w-full backdrop-blur bg-white/5 p-4 mt-6">
+						<div class="py-2 flex justify-between">
+							<p class="text-2xl font-semibold">{ item.institute }</p>
+							<p class="text-xl">{ item.duration }, <span class="font-semibold">CGPA: { item.cgpa }</span></p>
+						</div>
+						<div class="py-2">
+							<ul class="list-disc list-inside">
+								for _, item := range item.description {
+									<li>{ item }</li>
+								}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+}
+
+type EducationItem struct {
+	title       string
+	institute   string
+	duration    string
+	cgpa        string
+	description []string
+}
+
+var education = []EducationItem{
+	{
+		title:     "B.Sc. Information Technology",
+		institute: "Uka Tarsadia University",
+		duration:  "May 2017 - Spet 2024",
+		cgpa:      "8.0",
+		description: []string{
+			"Fundamentals of Computer Science, OOP",
+			"Data Structures and Algorithms, Operating Systems",
+			"Cyber Security, Web Development, Database Management Systems",
+		},
+	},
+}
