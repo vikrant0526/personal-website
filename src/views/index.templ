@@ -8,7 +8,7 @@ import (
 templ Index() {
 	@layouts.Base("Vikrant Shah | Home") {
 		<section class="w-screen relative">
-			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
+			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full fixed top-0 translate-y-[-100%] pulse"></div>
 			<div class="container p-4 flex m-auto h-screen items-center justify-between">
 				<div class="flex justify-center flex-col">
 					<div class="flex items-center">
@@ -30,11 +30,15 @@ templ Index() {
 					<img src="/assets/svgs/virkant-shah-programmer.svg" alt="Vikrant Shah" class="w-full"/>
 					<a href="https://storyset.com/web" class="text-xs text-right">Web illustrations by Storyset</a>
 				</div>
+				<div class="flex justify-center items-center absolute inset-x-0 bottom-4 animate-bounce transition-opacity" id="scroll-indicator">
+					<div class="relative">
+						<img src="/assets/svgs/caret.svg" alt="caret" class="w-8 aspect-square rotate-90"/>
+						<img src="/assets/svgs/caret.svg" alt="caret" class="w-4 aspect-square rotate-90 absolute top-0 left-0 translate-x-[50%]"/>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="w-screen relative overflow-clip" id="whoami">
-			<div class="h-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-100%] pulse"></div>
-			<div class="h-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[100%] pulse"></div>
 			<div class="container p-4 flex flex-col m-auto justify-center pt-28">
 				@components.H2("Who am I?")
 				<div class="py-8">

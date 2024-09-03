@@ -5,6 +5,7 @@ function main() {
   addCursorListner();
   addNavBackgroundListner();
   setupTestimonialsSlider();
+  addScrollIndicatorListner();
   updateCopyRightDate();
 }
 
@@ -44,6 +45,16 @@ function addNavBackgroundListner() {
   };
   navBackgroundToggle();
   document.addEventListener("scroll", navBackgroundToggle);
+}
+
+function addScrollIndicatorListner() {
+  const scrollIndicator = document.getElementById("scroll-indicator");
+  if (!scrollIndicator) return;
+  const showScrollIndicator = () => {
+    scrollIndicator.style.opacity = ((200 - window.scrollY) / 200).toString();
+  };
+  showScrollIndicator();
+  document.addEventListener("scroll", showScrollIndicator);
 }
 
 // Update the year in the footer

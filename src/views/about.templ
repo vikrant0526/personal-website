@@ -8,7 +8,7 @@ import (
 templ About() {
 	@layouts.Base("Vikrant Shah | About") {
 		<section class="relative w-screen">
-			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
+			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full fixed top-0 translate-y-[-100%] pulse"></div>
 			<div class="container flex items-center justify-between h-screen p-4 m-auto">
 				<div class="flex flex-col justify-center">
 					<div class="flex items-center">
@@ -35,24 +35,18 @@ templ About() {
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="experience">
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
 			<div class="container flex flex-col p-4 m-auto pt-28">
 				@components.H2("Experience")
 				@components.Experience()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="education">
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
 			<div class="container flex flex-col p-4 m-auto pt-28">
 				@components.H2("Education")
 				@components.Education()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="skills">
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute left-0 translate-x-[-105%] pulse"></div>
-			<div class="h-full aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute right-0 translate-x-[105%] pulse"></div>
 			<div class="container flex flex-col p-4 m-auto pt-28">
 				@components.H2("Skills")
 				@components.Skills()
