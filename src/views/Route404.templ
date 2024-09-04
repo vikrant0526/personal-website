@@ -7,7 +7,12 @@ templ Route404() {
 		<section class="h-screen w-screen flex justify-center items-center">
 			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
 			<img src="assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah Peace Sign" class="h-36 w-36"/>
-			<h1 class="text-3xl font-semibold">Oops this page does not exist!</h1>
+			<div class="flex flex-col justify-center items-center gap-4">
+				<h1 class="text-3xl font-semibold">Oops this page does not exist!</h1>
+				<div class="ml-2 bg-gradient-to-tr from-cyan-400 via-sky-500 to-sky-700">
+					<a href="/" class="py-3 px-6 bg-white text-primary fill-primary text-lg flex items-center gap-2 duration-200 ease-in-out -translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0 text-nowrap">Back to Home</a>
+				</div>
+			</div>
 		</section>
 	}
 }

@@ -1,10 +1,10 @@
 package components
 
-templ ScrollIndicator() {
-	<div class="flex justify-center items-center absolute inset-x-0 bottom-4 animate-bounce transition-opacity" id="scroll-indicator">
+templ ScrollIndicator(link string) {
+	<a href={ templ.URL(link) } class="flex justify-center items-center absolute inset-x-0 bottom-4 animate-bounce transition-opacity" id="scroll-indicator">
 		<div class="relative">
 			<img src="/assets/svgs/caret.svg" alt="caret" class="w-8 aspect-square rotate-90"/>
 			<img src="/assets/svgs/caret.svg" alt="caret" class="w-4 aspect-square rotate-90 absolute top-0 left-0 translate-x-[50%]"/>
 		</div>
-	</div>
+	</a>
 }
