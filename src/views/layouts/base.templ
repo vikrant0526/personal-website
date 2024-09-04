@@ -15,6 +15,11 @@ templ Base(title string) {
 		<body>
 			<div id="bg-vingette" class="fixed inset-0 -z-50"></div>
 			<div class="absolute bg-cyan-500 h-20 w-20 blur-3xl rounded-full translate-x-[-50%] translate-y-[-50%] top-0 -z-40 transition-opacity duration-500" id="cursor"></div>
+			<div id="copied-toast" class="absolute inset-x-0 bottom-6 flex justify-center items-center transition-opacity opacity-0 duration-500 ease-in-out">
+				<div class="ml-2 bg-gradient-to-tr from-cyan-400 via-sky-500 to-sky-700">
+					<div class="py-3 px-6 bg-white text-primary fill-primary text-lg flex items-center gap-2 duration-200 ease-in-out -translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0 text-nowrap">Email copied to clipboard.</div>
+				</div>
+			</div>
 			@components.Navigation()
 			<main>
 				{ children... }

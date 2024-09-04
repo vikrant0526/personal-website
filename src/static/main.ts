@@ -1,14 +1,6 @@
 import "./style.css";
 import setupTestimonialsSlider from "./slider";
 
-function main() {
-  addCursorListner();
-  addNavBackgroundListner();
-  setupTestimonialsSlider();
-  addScrollIndicatorListner();
-  updateCopyRightDate();
-}
-
 // For cursor effect
 function addCursorListner() {
   const cursor = document.getElementById("cursor");
@@ -35,7 +27,7 @@ function addNavBackgroundListner() {
   const nav = document.getElementById("nav");
   if (!nav) return;
   const navBackgroundToggle = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 100) {
       nav.classList.remove("backdrop-opacity-0");
       nav.classList.add("bg-primary/50");
     } else {
@@ -51,7 +43,7 @@ function addScrollIndicatorListner() {
   const scrollIndicator = document.getElementById("scroll-indicator");
   if (!scrollIndicator) return;
   const showScrollIndicator = () => {
-    scrollIndicator.style.opacity = ((200 - window.scrollY) / 200).toString();
+    scrollIndicator.style.opacity = ((100 - window.scrollY) / 100).toString();
   };
   showScrollIndicator();
   document.addEventListener("scroll", showScrollIndicator);
@@ -67,4 +59,26 @@ function updateCopyRightDate() {
   copyRightDate.innerText = currentYear.toString();
 }
 
-document.addEventListener("DOMContentLoaded", main);
+function emailCopyToClipboard() {
+  const email = document.querySelectorAll('[href="#email"]')[0] as HTMLElement;
+  if (!email) return;
+  email.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(email.innerText);
+    const toast = document.getElementById("copied-toast");
+    if (!toast) return;
+    toast.style.opacity = "1";
+    setTimeout(() => {
+      toast.style.opacity = "0";
+    }, 2000);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  addCursorListner();
+  addNavBackgroundListner();
+  setupTestimonialsSlider();
+  addScrollIndicatorListner();
+  updateCopyRightDate();
+  emailCopyToClipboard();
+});

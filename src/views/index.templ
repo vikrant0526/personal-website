@@ -10,7 +10,7 @@ templ Index() {
 		<section class="w-screen relative">
 			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full fixed top-0 translate-y-[-100%] pulse"></div>
 			<div class="container p-4 flex m-auto h-screen items-center justify-between">
-				<div class="flex justify-center flex-col">
+				<div class="flex justify-center flex-col flex-1">
 					<div class="flex items-center">
 						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-36 xl:w-40 aspect-square"/>
 						<div>
@@ -26,16 +26,12 @@ templ Index() {
 						</div>
 					</div>
 				</div>
-				<div class="w-2/5 flex flex-col">
-					<img src="/assets/svgs/virkant-shah-programmer.svg" alt="Vikrant Shah" class="w-full"/>
-					<a href="https://storyset.com/web" class="text-xs text-right">Web illustrations by Storyset</a>
-				</div>
-				<div class="flex justify-center items-center absolute inset-x-0 bottom-4 animate-bounce transition-opacity" id="scroll-indicator">
-					<div class="relative">
-						<img src="/assets/svgs/caret.svg" alt="caret" class="w-8 aspect-square rotate-90"/>
-						<img src="/assets/svgs/caret.svg" alt="caret" class="w-4 aspect-square rotate-90 absolute top-0 left-0 translate-x-[50%]"/>
+				<div class="w-1/3">
+					<div class="bg-gradient-to-tr from-cyan-400 via-sky-500 to-sky-700">
+						<img src="/assets/images/vikrant-shah-profile-sq.jpg" alt="Vikrant Shah" class="w-full duration-200 ease-in-out -translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0"/>
 					</div>
 				</div>
+				@components.ScrollIndicator()
 			</div>
 		</section>
 		<section class="w-screen relative overflow-clip" id="whoami">

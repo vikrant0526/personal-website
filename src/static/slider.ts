@@ -1,3 +1,5 @@
+let interval: number | null = null;
+
 export default function setupTestimonialsSlider() {
   const slider = document.getElementById("testimonials");
 
@@ -30,17 +32,6 @@ export default function setupTestimonialsSlider() {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlides();
   }
-
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlides();
-  }
-
-  const next = document.getElementById("next");
-  if (next) next.addEventListener("click", nextSlide);
-
-  const prev = document.getElementById("prev");
-  if (prev) prev.addEventListener("click", prevSlide);
 
   const dotsContainer = document.getElementById("testimonial-dots");
   if (!dotsContainer) return;
@@ -75,5 +66,11 @@ export default function setupTestimonialsSlider() {
     dotsContainer.appendChild(dot);
   });
 
-  setInterval(nextSlide, 5000);
+  interval = setInterval(nextSlide, 5000);
+  slider.addEventListener("mouseenter", () => {
+    if (interval) clearInterval(interval);
+  });
+  slider.addEventListener("mouseleave", () => {
+    interval = setInterval(nextSlide, 5000);
+  });
 }
