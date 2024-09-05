@@ -5,20 +5,20 @@ templ Testimonials() {
 		<div class="overflow-hidden">
 			<div class="relative min-w-full h-[280px]" id="testimonials">
 				for _, testimonial := range testimonials {
-					<div class="absolute inset-0 backdrop-blur bg-white/5 px-6 py-8 mt-10 min-w-full">
+					<div class="absolute inset-0 backdrop-blur bg-white/5 px-6 py-8 mt-6 xl:mt-10 min-w-full">
 						<div class="w-full h-full flex flex-col justify-center">
 							<div class="relative">
 								<div class="absolute -top-4 -left-2">
 									@Quotes(true)
 								</div>
-								<p class="text-xl">
+								<p class="text-base xl:text-xl">
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { testimonial.quote }
 								</p>
-								<div class="absolute -bottom-4 -right-2">
+								<div class="absolute -bottom-8 -right-2">
 									@Quotes(false)
 								</div>
 							</div>
-							<div class="flex justify-end mt-6 mr-2">
+							<div class="flex justify-end mt-8 mr-2">
 								@H4("- " + testimonial.author)
 							</div>
 						</div>

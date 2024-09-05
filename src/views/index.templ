@@ -9,16 +9,16 @@ templ Index() {
 	@layouts.Base("Vikrant Shah | Home") {
 		<section class="w-screen relative">
 			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full fixed top-0 translate-y-[-100%] pulse"></div>
-			<div class="container p-4 flex m-auto h-screen items-center justify-between">
+			<div class="container px-8 py-4 flex m-auto h-screen items-center justify-between">
 				<div class="flex justify-center flex-col flex-1">
 					<div class="flex items-center">
-						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-36 xl:w-40 aspect-square"/>
+						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-28 xl:w-40 aspect-square hidden lg:block"/>
 						<div>
 							@components.H1("Vikrant Shah")
 							@components.SubTitle("Full Stack Developer")
 						</div>
 					</div>
-					<p class="text-base py-8">I'm a Full Stack Developer with a passion for building web applications. I specialize in building scalable and performant web applications using modern technologies.</p>
+					<p class="text-base py-8 pr-4">I'm a Full Stack Developer with a passion for building web applications. I specialize in building scalable and performant web applications using modern technologies.</p>
 					<div class="flex justify-between">
 						<div class="flex gap-5">
 							@components.ButtonLink("/assets/vikrant-shah-resume.pdf", "Download CV", true)
@@ -35,22 +35,22 @@ templ Index() {
 			</div>
 		</section>
 		<section class="w-screen relative overflow-clip" id="whoami">
-			<div class="container p-4 flex flex-col m-auto justify-center pt-28">
+			<div class="container px-8 py-4 flex flex-col m-auto justify-center pt-28">
 				@components.H2("Who am I?")
 				<div class="py-8">
 					@components.H3("The Person")
-					<p class="py-3 px-6 mt-8 backdrop-blur bg-white/5">
+					<p class="py-3 px-6 mt-8 backdrop-blur bg-white/5 text-base xl:text-xl">
 						Hi, I’m Vikrant, a programmer who takes pleasure in exploring the culinary world of spices when I’m not coding. An avid anime enthusiast, often getting lost in the vibrant worlds of imagination and compelling stories. A budding chess grand master to be (because always dream big right :p), amused by the strategic depth of chess, looking for the next challenge to outmanoeuvre. From trends in technology to flavours of food, I take pleasure in diverse interests beyond my nine to five.
 					</p>
 				</div>
 				<div class="py-8">
 					@components.H3("The Professional")
-					<p class="py-3 px-6 mt-8 backdrop-blur bg-white/5">
+					<p class="py-3 px-6 mt-8 backdrop-blur bg-white/5 text-base xl:text-xl">
 						Innovator by nature, I enjoy staying up to date with tech and keep learning new things in software development space. I have over three years of experience in designing and implementing robust code for high-volume businesses. I thrive on full-stack development and platform architecture, and I use my interpersonal skills to work with engineering teams to find efficient business solutions. My passion for programming often inspires me to tackle complex problems. I experiment with modern web technologies to enhance the end user experience. I have a strong background in developing and optimizing data processes that deliver consistent high-quality, scalable applications.
 					</p>
 				</div>
 			</div>
-			<div class="container p-4 flex flex-col m-auto justify-center pt-28">
+			<div class="container px-8 py-4 flex flex-col m-auto justify-center pt-28">
 				@components.H2("What people say about me.")
 				@components.Testimonials()
 			</div>

@@ -9,16 +9,16 @@ templ About() {
 	@layouts.Base("Vikrant Shah | About") {
 		<section class="relative w-screen">
 			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full fixed top-0 translate-y-[-100%] pulse"></div>
-			<div class="container flex items-center justify-between h-screen p-4 m-auto">
+			<div class="container py-4 px-8 flex m-auto h-screen items-center justify-between">
 				<div class="flex flex-col justify-center flex-1">
 					<div class="flex items-center">
-						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-36 xl:w-40 aspect-square"/>
+						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-28 xl:w-40 aspect-square hidden lg:visible"/>
 						<div>
 							@components.H1("My Journey")
 							@components.SubTitle("One Step At A Time.")
 						</div>
 					</div>
-					<p class="text-base py-8">From a geek and a foodie from the land of Bollywood and Spicy food to a Full Stack Developer in the land of beers, Germany!</p>
+					<p class="text-base py-8 pr-4">From a geek and a foodie from the land of Bollywood and Spicy food to a Full Stack Developer in the land of beers, Germany!</p>
 					<div class="flex justify-between">
 						<div class="flex gap-5">
 							@components.ButtonLink("#experience", "Experience", false)
@@ -36,19 +36,19 @@ templ About() {
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="experience">
-			<div class="container flex flex-col p-4 m-auto pt-28">
+			<div class="container flex flex-col py-4 px-8 m-auto pt-28">
 				@components.H2("Experience")
 				@components.Experience()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="education">
-			<div class="container flex flex-col p-4 m-auto pt-28">
+			<div class="container flex flex-col py-4 px-8 m-auto pt-28">
 				@components.H2("Education")
 				@components.Education()
 			</div>
 		</section>
 		<section class="relative w-screen overflow-clip" id="skills">
-			<div class="container flex flex-col p-4 m-auto pt-28">
+			<div class="container flex flex-col py-4 px-8 m-auto pt-28">
 				@components.H2("Skills")
 				@components.Skills()
 			</div>

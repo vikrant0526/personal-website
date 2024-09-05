@@ -9,16 +9,16 @@ templ Contact() {
 	@layouts.Base("Vikrant Shah | Contact") {
 		<section class="relative w-screen">
 			<div class="w-screen aspect-square bg-cyan-500 opacity-80 blur-3xl rounded-full absolute top-0 translate-y-[-100%] pulse"></div>
-			<div class="container flex items-center justify-between h-screen p-4 m-auto">
+			<div class="container py-4 px-8 flex m-auto h-screen items-center justify-between">
 				<div class="flex flex-col justify-center flex-1">
 					<div class="flex items-center">
-						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-36 xl:w-40 aspect-square"/>
+						<img src="/assets/images/vikrant-shah-peace-sign-memoji.png" alt="Vikrant Shah" class="w-28 xl:w-40 aspect-square hidden lg:visible"/>
 						<div>
 							@components.H1("Let's Connect")
 							@components.SubTitle("Good stories start with a hello!")
 						</div>
 					</div>
-					<p class="py-8 text-base">Email is good, LinkedIn connect is better, and a coffee chat is the best. What's a conversation if you can't see the person's face.</p>
+					<p class="py-8 pr-4 text-base">Email is good, LinkedIn connect is better, and a coffee chat is the best. What's a conversation if you can't see the person's face.</p>
 					<div class="flex justify-between">
 						<div class="flex gap-5">
 							@components.ButtonLink("http://linkedin.com/in/vikrant55/", "LinkedIn", false)
