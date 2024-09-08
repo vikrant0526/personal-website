@@ -8,8 +8,10 @@ import {
   addScrollIndicatorListner,
 } from "./scripts/scroll-handlers";
 import { setupTestimonialsSlider } from "./scripts/slider";
+import { addMobileNavListner } from "./scripts/mobile-nav";
 
 document.addEventListener("DOMContentLoaded", () => {
+  addMobileNavListner();
   addCursorListner();
   addNavBackgroundListner();
   addScrollIndicatorListner();

@@ -3,7 +3,7 @@ export function addNavBackgroundListner() {
   const nav = document.getElementById("nav");
   if (!nav) return;
   const navBackgroundToggle = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 50) {
       nav.classList.remove("backdrop-opacity-0");
       nav.classList.add("bg-primary/50");
     } else {
@@ -19,7 +19,7 @@ export function addScrollIndicatorListner() {
   const scrollIndicator = document.getElementById("scroll-indicator");
   if (!scrollIndicator) return;
   const showScrollIndicator = () => {
-    scrollIndicator.style.opacity = ((100 - window.scrollY) / 100).toString();
+    scrollIndicator.style.opacity = ((50 - window.scrollY) / 50).toString();
   };
   showScrollIndicator();
   document.addEventListener("scroll", showScrollIndicator);
