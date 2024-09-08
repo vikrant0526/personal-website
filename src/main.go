@@ -8,7 +8,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 
-	"github.com/vikrant0526/personal-website/src/views"
+	"vikrrantshah/personal-website/src/views"
 )
 
 func main() {
